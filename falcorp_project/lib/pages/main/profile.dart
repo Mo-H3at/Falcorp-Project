@@ -1,5 +1,17 @@
 import 'package:flutter/material.dart';
+
+import 'package:falcorp_project/pages/profile_settings/personalDetails.dart';
 import 'package:falcorp_project/shared_widgets/profileSettingsList.dart';
+
+import '../profile_settings/username.dart';
+import '../profile_settings/aboutUs.dart';
+import '../profile_settings/email.dart';
+import '../profile_settings/help.dart';
+import '../profile_settings/mobileNumber.dart';
+import '../profile_settings/notificationsSetting.dart';
+import '../profile_settings/password.dart';
+import '../profile_settings/theme.dart';
+import '../profile_settings/tos.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -16,27 +28,35 @@ class _ProfileState extends State<Profile> {
         child: ListView(
           children: [
             ProfileSettingHeader(title: 'Account'),
-            ProfileSettingPages(title: 'Username'),
-            ProfileSettingPages(title: 'Email Address'),
-            ProfileSettingPages(title: 'Personal Information'),
-            ProfileSettingPages(title: 'Change Password'),
-            ProfileSettingPages(title: 'Mobile Number'),
+            ProfileSettingPages(title: 'Username', page: Username()),
+            ProfileSettingPages(title: 'Email Address', page: const EmailAddress()),
+            ProfileSettingPages(title: 'Personal Information', page: const PersonalDetails()),
+            ProfileSettingPages(title: 'Change Password', page: const Password()),
+            ProfileSettingPages(title: 'Mobile Number', page: const MobileNumber()),
 
             ProfileSettingHeader(title: 'App Settings'),
-            ProfileSettingPages(title: 'Theme'),
-            ProfileSettingPages(title: 'Notifications'),
-            
+            ProfileSettingPages(title: 'Theme', page: const ThemeSetting()),
+            ProfileSettingPages(title: 'Notifications', page: const NotificationsSettings()),
+
             ProfileSettingHeader(title: 'App Info'),
-            ProfileSettingPages(title: 'About Us'),
-            ProfileSettingPages(title: 'Help'),
-            ProfileSettingPages(title: 'Terms of Service'),
+            ProfileSettingPages(title: 'About Us', page: const AboutUs()),
+            ProfileSettingPages(title: 'Help', page: const HelpPage()),
+            ProfileSettingPages(title: 'Terms of Service', page: const TermsOfService()),
 
             Container(
               height: 60,
               color: const Color.fromARGB(255, 14, 8, 8),
               margin: const EdgeInsets.symmetric(vertical: 10),
               child: Center(
-                child: Text('Item 12', style: TextStyle(color: Colors.red)),
+                child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Icon(Icons.logout, color: const Color.fromARGB(255, 255, 17, 0),),
+                    Text('Log Out', 
+                      style: TextStyle(color: const Color.fromARGB(255, 255, 17, 0), fontWeight: FontWeight.bold),),
+                  ],
+                ),
               ),
             ),
           ],

@@ -35,6 +35,14 @@ static const List<Widget> _widgetOptions = <Widget>[
       appBar: AppBar(
         backgroundColor: Theme.of(context).colorScheme.primaryFixed,
         title: const Text('Mo Tech'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.notifications),
+            onPressed: () {
+              // Handle notification button press
+            },
+          ),
+        ],
       ),
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),

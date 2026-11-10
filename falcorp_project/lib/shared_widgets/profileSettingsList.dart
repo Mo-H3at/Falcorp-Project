@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class ProfileSettingPages extends StatefulWidget {
-  const ProfileSettingPages({super.key,required this.title});
+  const ProfileSettingPages({super.key,required this.title,required this.page});
 
   final String title;
+  final Widget page;
 
   @override
   State<ProfileSettingPages> createState() => _ProfileSettingPagesState();
@@ -12,11 +13,27 @@ class ProfileSettingPages extends StatefulWidget {
 class _ProfileSettingPagesState extends State<ProfileSettingPages> {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 50,
-      color: Colors.grey[300],
-      child: Center(
-        child: Text(widget.title),
+    return InkWell(
+      onTap: () {
+        Navigator.push(context,
+          MaterialPageRoute(builder: (context) => widget.page)
+        );
+      },
+      child: Container(
+        height: 50,
+        color: Colors.grey[300],
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(widget.title),
+                Icon(Icons.arrow_forward_ios, size: 16),
+              ],
+            ),
+          ),
+        ),
       ),
     );
   }
