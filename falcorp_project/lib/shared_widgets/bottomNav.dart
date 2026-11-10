@@ -33,7 +33,8 @@ static const List<Widget> _widgetOptions = <Widget>[
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Theme.of(context).colorScheme.primaryFixed,
+        backgroundColor: Colors.black,
+        foregroundColor: Colors.white,
         title: const Text('Mo Tech'),
         actions: [
           IconButton(

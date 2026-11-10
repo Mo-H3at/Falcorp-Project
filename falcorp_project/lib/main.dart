@@ -12,9 +12,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Home',
       theme: ThemeData(
-        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 0, 0, 0)),
+        colorScheme: .fromSeed(seedColor: const Color.fromARGB(255, 255, 255, 255)),
       ),
       home: const BottomNavBar(),
     );

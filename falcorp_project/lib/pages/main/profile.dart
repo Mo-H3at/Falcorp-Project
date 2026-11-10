@@ -3,13 +3,10 @@ import 'package:flutter/material.dart';
 import 'package:falcorp_project/pages/profile_settings/personalDetails.dart';
 import 'package:falcorp_project/shared_widgets/profileSettingsList.dart';
 
-import '../profile_settings/username.dart';
+import '../profile_settings/userDetails.dart';
 import '../profile_settings/aboutUs.dart';
-import '../profile_settings/email.dart';
 import '../profile_settings/help.dart';
-import '../profile_settings/mobileNumber.dart';
 import '../profile_settings/notificationsSetting.dart';
-import '../profile_settings/password.dart';
 import '../profile_settings/theme.dart';
 import '../profile_settings/tos.dart';
 
@@ -28,11 +25,11 @@ class _ProfileState extends State<Profile> {
         child: ListView(
           children: [
             ProfileSettingHeader(title: 'Account'),
-            ProfileSettingPages(title: 'Username', page: Username()),
-            ProfileSettingPages(title: 'Email Address', page: const EmailAddress()),
-            ProfileSettingPages(title: 'Personal Information', page: const PersonalDetails()),
-            ProfileSettingPages(title: 'Change Password', page: const Password()),
-            ProfileSettingPages(title: 'Mobile Number', page: const MobileNumber()),
+            ProfileSettingPages(title: 'User Details', page: const UserDetails()),
+            ProfileSettingPages(title: 'Personal Details', page: const PersonalDetails()),
+            //ProfileSettingPages(title: 'Email Address', page: const EmailAddress()),
+            //ProfileSettingPages(title: 'Change Password', page: const Password()),
+            //ProfileSettingPages(title: 'Mobile Number', page: const MobileNumber()),
 
             ProfileSettingHeader(title: 'App Settings'),
             ProfileSettingPages(title: 'Theme', page: const ThemeSetting()),
