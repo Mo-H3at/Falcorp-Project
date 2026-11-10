@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../shared_widgets/mainPageCards.dart';
+
 class Library extends StatefulWidget {
   const Library({super.key});
 
@@ -18,46 +20,14 @@ class _LibraryState extends State<Library> {
           padding: const EdgeInsets.all(10),
           crossAxisCount: 2,
           children: [
-            Card(
-              child: Center(
-                child: Text('Item 1'),
-              ),
-            ),
-            Card(
-              child: Center(
-                child: Text('Item 2'),
-              ),
-            ),
-            Card(
-              child: Center(
-                child: Text('Item 3'),
-              ),
-            ),
-            Card(
-              child: Center(
-                child: Text('Item 4'),
-              ),
-            ),
-            Card(
-              child: Center(
-                child: Text('Item 5'),
-              ),
-            ),
-            Card(
-              child: Center(
-                child: Text('Item 6'),
-              ),
-            ),
-            Card(
-              child: Center(
-                child: Text('Item 7'),
-              ),
-            ),
-            Card(
-              child: Center(
-                child: Text('Item 8'),
-              ),
-            ),
+            MainCardWidget(imagePath: 'Mazda1.jpg'),
+            MainCardWidget(imagePath: 'Audi1.jpg'),
+            MainCardWidget(imagePath: 'Beemer1.jpg'),
+            MainCardWidget(imagePath: 'Jaguar1.jpg'),
+            MainCardWidget(imagePath: 'Porsche1.jpg'),
+            MainCardWidget(imagePath: 'R33_1.jpg'),
+            MainCardWidget(imagePath: 'AstonMartin1.jpg'),
+            MainCardWidget(imagePath: 'BMW1.jpg'),
           ],
         ),
       ),
