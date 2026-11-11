@@ -20,6 +20,15 @@ class _ThemeSettingState extends State<ThemeSetting> {
         ),
         title: Text('Theme Settings'),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.warning, size: 100),
+            Text('To Be Developed',style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+          ],
+        ),
+      ),
     );
   }
 }

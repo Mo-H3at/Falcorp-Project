@@ -20,6 +20,15 @@ class _EmailAddressState extends State<EmailAddress> {
         ),
         title: Text('Email Address'),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.warning, size: 100),
+            Text('To Be Developed',style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+          ],
+        ),
+      ),
     );
   }
 }

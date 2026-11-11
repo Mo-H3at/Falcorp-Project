@@ -20,6 +20,15 @@ class _HelpPageState extends State<HelpPage> {
         ),
         title: Text('Help'),
       ),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Icon(Icons.warning, size: 100),
+            Text('To Be Developed',style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold)),
+          ],
+        ),
+      ),
     );
   }
 }
