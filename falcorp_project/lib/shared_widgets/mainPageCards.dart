@@ -18,6 +18,8 @@ class _MainCardWidgetState extends State<MainCardWidget> {
   Widget build(BuildContext context) {
     return InkWell(
       child: Card(
+        elevation: 0.2,
+        color: Colors.grey[100],
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,

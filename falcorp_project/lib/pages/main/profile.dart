@@ -25,7 +25,7 @@ class _ProfileState extends State<Profile> {
       body: Center(
         child: ListView(
           children: [
-            
+
             ProfileSettingHeader(title: 'Account'),
             ProfileSettingPages(title: 'User Details', page: const UserDetails()),
             ProfileSettingPages(title: 'Personal Details', page: const PersonalDetails()),
@@ -65,6 +65,4 @@ class _ProfileState extends State<Profile> {
       ),
     );
   }
-}
-              
-           
+}    

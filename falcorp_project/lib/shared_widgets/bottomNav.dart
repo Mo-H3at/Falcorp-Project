@@ -56,27 +56,32 @@ static const List<Widget> _widgetOptions = <Widget>[
           currentIndex: _selectedIndex,
           onTap: _onItemTapped,
           items: const [
+
             BottomNavigationBarItem(
               icon: Icon(Icons.home),
               label: 'Home',
               activeIcon: Icon(Icons.home, color: Color.fromARGB(255, 4, 136, 251)),
             ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.search),
               label: 'Search',
               activeIcon: Icon(Icons.search, color: Color.fromARGB(255, 4, 136, 251)),
             ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.grid_view),
               label: 'Library',
               activeIcon: Icon(Icons.grid_view, color: Color.fromARGB(255, 4, 136, 251)),
               
             ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
               label: 'Profile',
               activeIcon: Icon(Icons.person, color: Color.fromARGB(255, 4, 136, 251)),
             ),
+            
           ],
         ),
     );

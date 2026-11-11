@@ -80,6 +80,7 @@ class _SelectedCardInfoPageState extends State<SelectedCardInfoPage> {
                         style: const TextStyle(fontSize: 15)
                   ),
                 ),
+                
               ],
             ),
           ),
