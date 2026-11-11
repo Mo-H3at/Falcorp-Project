@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-class SelectedCardInfoPage extends StatefulWidget {
-  const SelectedCardInfoPage({super.key,required this.imagePath,required this.imageName});
+import '../models/dataModels.dart';
 
-  final String imagePath;
-  final String imageName;
+class SelectedCardInfoPage extends StatefulWidget {
+  const SelectedCardInfoPage({super.key,required this.car});
+
+  final CardData car;
 
   @override
   State<SelectedCardInfoPage> createState() => _SelectedCardInfoPageState();
@@ -16,7 +17,8 @@ class _SelectedCardInfoPageState extends State<SelectedCardInfoPage> {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-          backgroundColor: const Color.fromARGB(255, 0, 196, 255),
+          backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+          foregroundColor: const Color.fromARGB(255, 255, 255, 255),
           leading: IconButton(
             icon: const Icon(Icons.arrow_back),
             onPressed: () {
@@ -37,32 +39,34 @@ class _SelectedCardInfoPageState extends State<SelectedCardInfoPage> {
                       Container(
                         height: 250,
                         width: double.infinity,
-                        child: Image(image: AssetImage('assets/images/${widget.imagePath}')),
+                        child: Image(image: AssetImage(widget.car.image1)),
                       ),
-                      Text("The ${widget.imageName}",style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
+                      Text("The ${widget.car.carName}",style: const TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)
                     ],
                   ),
                 ),
             
-                Text("Born in Ängelholm and named after the Swedish word for 'to reign,' the Regera doesn't accelerate so much as it rewrites the rules of momentum. A twin-turbo V8 and three electric motors fuse into one seamless, gearless surge — no shifts, no interruption," 
-                      +"just a single unbroken line from standstill to over 400 km/h. It is less a car than a declaration: that the combustion engine's swan song could also be its most glorious verse.",
-                      style: const TextStyle(fontSize: 15)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(widget.car.carData1,style: const TextStyle(fontSize: 15)
+                  ),
                 ),
             
                 Container(
+                  padding: const EdgeInsets.all(4.0),
                   child: Row(
-                    spacing: 2,
+                    spacing: 5,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       Expanded(
                         flex: 1,
                         child: Container(
-                          child: Image(image: AssetImage('assets/images/${widget.imagePath}')),
+                          child: Image(image: AssetImage(widget.car.image2)),
                         ),
                       ),
                       Expanded(
-                        flex: 2,
-                        child: Text("1,500 horsepower. One gear. Zero compromise. The Regera's Direct Drive transmission ditches the gearbox entirely, letting a hybrid powertrain pull relentlessly from idle to top speed. Carbon-fibre monocoque, active rear wing, triplex suspension, and a battery pack tuned more like a race car than a road car. Only 80 were ever built — each one a rolling argument that engineering restraint can produce excess.",
+                        flex: 1,
+                        child: Text(widget.car.carData2,
                           style: const TextStyle(fontSize: 13)
                         ),
                       ),
@@ -70,8 +74,11 @@ class _SelectedCardInfoPageState extends State<SelectedCardInfoPage> {
                   ),
                 ),
       
-                Text("Swedish-built, hybrid-led, gearbox-free. The Regera doesn't change gears — it simply refuses to stop pulling.",
-                      style: const TextStyle(fontSize: 15)
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(widget.car.carData3,
+                        style: const TextStyle(fontSize: 15)
+                  ),
                 ),
               ],
             ),

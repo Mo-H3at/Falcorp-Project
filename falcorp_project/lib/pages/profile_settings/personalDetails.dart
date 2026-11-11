@@ -39,38 +39,8 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                      Text('Name'),
-                      Text('Moagi',style: TextStyle(fontWeight: FontWeight.bold),),
-                    ],)
-                  ),
-                  Expanded(
-                    flex: 0,
-                    child: TextButton(
-                      onPressed: () {
-                        // Handle save button press
-                      },
-                      child: Text('Edit',style: TextStyle(fontWeight: FontWeight.bold),),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-
-            Container(
-              padding: EdgeInsets.symmetric(horizontal: 4.0),
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-              ),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Expanded(
-                    flex: 1,
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                      Text('Surname'),
-                      Text('Boikanyo',style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text('Full Name'),
+                      Text('Moagi Boikanyo',style: TextStyle(fontWeight: FontWeight.bold),),
                     ],)
                   ),
                   Expanded(
