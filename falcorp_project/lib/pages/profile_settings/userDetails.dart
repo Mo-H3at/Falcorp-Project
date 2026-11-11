@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
 
+import 'userDetailsSubDialog/email.dart';
+import 'userDetailsSubDialog/mobileNumber.dart';
+import 'userDetailsSubDialog/password.dart';
+import 'userDetailsSubDialog/username.dart';
+
 class UserDetails extends StatefulWidget {
   const UserDetails({super.key});
 
@@ -8,6 +13,12 @@ class UserDetails extends StatefulWidget {
 }
 
 class _UserDetailsState extends State<UserDetails> {
+
+  var username = 'MoDaMan';
+  var email = 'MoFal@email.com';
+  var mobileNumber = '+267 71 234 567';
+  var password = '••••••••';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,14 +51,17 @@ class _UserDetailsState extends State<UserDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Text('Username'),
-                      Text('MoDaMan',style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text(username,style: TextStyle(fontWeight: FontWeight.bold),),
                     ],)
                   ),
                   Expanded(
                     flex: 0,
                     child: TextButton(
                       onPressed: () {
-                        // Handle save button press
+                        showDialog(context: context, builder: (context) => UsernameDialog(currentUsername: username),
+                          useSafeArea: true,
+                          barrierDismissible: false,
+                        );
                       },
                       child: Text('Edit',style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
@@ -70,14 +84,17 @@ class _UserDetailsState extends State<UserDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Text('Email'),
-                      Text('MoFal@email.com',style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text(email,style: TextStyle(fontWeight: FontWeight.bold),),
                     ],)
                   ),
                   Expanded(
                     flex: 0,
                     child: TextButton(
                       onPressed: () {
-                        // Handle save button press
+                        showDialog(context: context, builder: (context) => EmailAddressDialog(currentEmail: email),
+                          useSafeArea: true,
+                          barrierDismissible: false,
+                        );
                       },
                       child: Text('Edit',style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
@@ -100,14 +117,18 @@ class _UserDetailsState extends State<UserDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Text('Mobile Number'),
-                      Text('+267 71 234 567',style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text(mobileNumber,style: TextStyle(fontWeight: FontWeight.bold),),
                     ],)
                   ),
                   Expanded(
                     flex: 0,
                     child: TextButton(
                       onPressed: () {
-                        // Handle save button press
+                        showDialog(
+                          context: context,
+                          builder: (context) => MobileNumberDialog(currentMobileNumber: mobileNumber),
+                          useSafeArea: true,
+                          barrierDismissible: false,);
                       },
                       child: Text('Edit',style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
@@ -137,7 +158,10 @@ class _UserDetailsState extends State<UserDetails> {
                     flex: 0,
                     child: TextButton(
                       onPressed: () {
-                        // Handle save button press
+                        showDialog(context: context, builder: (context) => PasswordDialog(currentPassword: '••••••••')
+                          ,useSafeArea: true,
+                          barrierDismissible: false,
+                        );
                       },
                       child: Text('Edit',style: TextStyle(fontWeight: FontWeight.bold),),
                     ),

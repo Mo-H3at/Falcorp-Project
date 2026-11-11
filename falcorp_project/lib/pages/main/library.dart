@@ -23,11 +23,6 @@ class _LibraryState extends State<Library> {
           padding: const EdgeInsets.all(10),
           crossAxisCount: 2,
           children: [
-            // MainCardWidget(imagePath: 'Regera1.jpg'),
-            // MainCardWidget(imagePath: 'GTR1.jpg'),
-            // MainCardWidget(imagePath: 'Porsche1.jpg'),
-            // MainCardWidget(imagePath: 'Mazda1.jpg'),
-            // MainCardWidget(imagePath: 'Chevrolet1.jpg'),
             MainCardWidget(card: carData.regera),
             MainCardWidget(card: carData.r34),
             MainCardWidget(card: carData.porsche911),

@@ -54,10 +54,10 @@ class _ProfileSettingHeaderState extends State<ProfileSettingHeader> {
     return Container(
       height: 30,
       margin: const EdgeInsets.only(top: 10),
-      color: Colors.blue[300],
+      color: const Color.fromARGB(255, 0, 0, 0),
       child: Center(
         child: Text(widget.title, 
-          style: const TextStyle(fontWeight: FontWeight.bold),
+          style: const TextStyle(fontWeight: FontWeight.bold,color: Color.fromARGB(255, 104, 187, 255)),
           textAlign: TextAlign.left,
           )
       ),

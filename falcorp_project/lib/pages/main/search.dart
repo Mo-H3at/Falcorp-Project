@@ -27,7 +27,7 @@ class _SearchState extends State<Search> {
                 child: TextField(
                   decoration: InputDecoration(
                     hintText: 'Search...',
-                    enabled: false,
+                    enabled: true,
                     prefixIcon: Icon(Icons.search),
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(8.0),

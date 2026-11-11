@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'personalDetailsSubDialog/dob.dart';
+import 'personalDetailsSubDialog/fullName.dart';
+import 'personalDetailsSubDialog/gender.dart';
+
 class PersonalDetails extends StatefulWidget {
   const PersonalDetails({super.key});
 
@@ -8,6 +12,11 @@ class PersonalDetails extends StatefulWidget {
 }
 
 class _PersonalDetailsState extends State<PersonalDetails> {
+
+  var fullname = 'Moagi Boikanyo';
+  var dob = '1990-01-01';
+  var gender = 'Male';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -40,14 +49,17 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Text('Full Name'),
-                      Text('Moagi Boikanyo',style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text(fullname,style: TextStyle(fontWeight: FontWeight.bold),),
                     ],)
                   ),
                   Expanded(
                     flex: 0,
                     child: TextButton(
                       onPressed: () {
-                        // Handle save button press
+                        showDialog(context: context, builder: (context) => FullNameDialog(currentFullName: fullname),
+                          useSafeArea: true,
+                          barrierDismissible: false,
+                        );
                       },
                       child: Text('Edit',style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
@@ -70,14 +82,17 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Text('Birthdate'),
-                      Text('1990-01-01',style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text(dob,style: TextStyle(fontWeight: FontWeight.bold),),
                     ],)
                   ),
                   Expanded(
                     flex: 0,
                     child: TextButton(
                       onPressed: () {
-                        // Handle save button press
+                        showDialog(context: context, builder: (context) => DateOfBirthDialog(currentDateOfBirth: dob),
+                          useSafeArea: true,
+                          barrierDismissible: false,
+                        );
                       },
                       child: Text('Edit',style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
@@ -100,14 +115,17 @@ class _PersonalDetailsState extends State<PersonalDetails> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                       Text('Gender'),
-                      Text('Male',style: TextStyle(fontWeight: FontWeight.bold),),
+                      Text(gender,style: TextStyle(fontWeight: FontWeight.bold),),
                     ],)
                   ),
                   Expanded(
                     flex: 0,
                     child: TextButton(
                       onPressed: () {
-                        // Handle save button press
+                        showDialog(context: context, builder: (context) => GenderDialog(currentGender: gender),
+                          useSafeArea: true,
+                          barrierDismissible: false,
+                        );
                       },
                       child: Text('Edit',style: TextStyle(fontWeight: FontWeight.bold),),
                     ),
