@@ -123,3 +123,11 @@ class MainCardData{
   );
 
 }
+
+class UserDetails{
+  var userDetails = UserData(username: "Mo Da Man", email: "Mo33@email.com", phoneNumber: "+34 571 238 217");
+}
+
+class PersonalDetails{
+  var personalDetails = PersonalData(fullName: "fullName", dateOfBirth: "1990-03-23", gender: "Male");
+}

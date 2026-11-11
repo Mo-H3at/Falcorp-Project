@@ -1,21 +1,33 @@
+import 'package:falcorp_project/models/dataModels.dart';
 import 'package:flutter/material.dart';
 
 import 'personalDetailsSubDialog/dob.dart';
 import 'personalDetailsSubDialog/fullName.dart';
 import 'personalDetailsSubDialog/gender.dart';
 
-class PersonalDetails extends StatefulWidget {
-  const PersonalDetails({super.key});
+class PersonalDetailsPage extends StatefulWidget {
+  const PersonalDetailsPage({super.key, required this.personalData });
+  
+  final PersonalData personalData;
 
   @override
-  State<PersonalDetails> createState() => _PersonalDetailsState();
+  State<PersonalDetailsPage> createState() => _PersonalDetailsPageState();
 }
 
-class _PersonalDetailsState extends State<PersonalDetails> {
+class _PersonalDetailsPageState extends State<PersonalDetailsPage> {
 
-  var fullname = 'Moagi Boikanyo';
-  var dob = '1990-01-01';
-  var gender = 'Male';
+  late PersonalData personalData;
+  var fullname = '';
+  var dob = '';
+  var gender = '';
+
+   @override
+  void initState() {
+    fullname = widget.personalData.fullName;
+    dob = widget.personalData.dateOfBirth;
+    gender = widget.personalData.gender;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

@@ -57,6 +57,9 @@ class _FullNameDialogState extends State<FullNameDialog> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  currentFullName = _fullNameController.text;
+                });
                 Navigator.of(context).pop();
               },
               child: const Text('Save'),

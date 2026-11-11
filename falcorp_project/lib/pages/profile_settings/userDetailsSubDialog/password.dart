@@ -59,6 +59,9 @@ class _PasswordDialogState extends State<PasswordDialog> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  currentPassword = _passwordController.text;
+                });
                 Navigator.of(context).pop();
               },
               child: const Text('Save'),

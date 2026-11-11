@@ -56,6 +56,9 @@ class _UsernameDialogState extends State<UsernameDialog> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  currentUsername = _usernameController.text;
+                });
                 Navigator.of(context).pop();
               },
               child: const Text('Save'),

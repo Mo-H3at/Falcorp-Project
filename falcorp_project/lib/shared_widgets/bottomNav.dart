@@ -1,3 +1,4 @@
+import 'package:falcorp_project/models/dataClasses.dart';
 import 'package:flutter/material.dart';
 
 import '../pages/main/home.dart';
@@ -15,12 +16,15 @@ class BottomNavBar extends StatefulWidget {
 class _BottomNavBarState extends State<BottomNavBar> {
 
 int _selectedIndex = 0;
+final userDetails = UserDetails();
+final personalDetails = PersonalDetails();
 
-static const List<Widget> _widgetOptions = <Widget>[
-    HomePage(),
-    Search(),
-    Library(),
-    Profile(),
+
+static final List<Widget> _widgetOptions = <Widget>[
+    const HomePage(),
+    const Search(),
+    const Library(),
+    Profile(userDetails: UserDetails(),personalDetails: PersonalDetails()),
   ];
 
   void _onItemTapped(int index) {
@@ -81,7 +85,7 @@ static const List<Widget> _widgetOptions = <Widget>[
               label: 'Profile',
               activeIcon: Icon(Icons.person, color: Color.fromARGB(255, 4, 136, 251)),
             ),
-            
+
           ],
         ),
     );

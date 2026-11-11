@@ -1,3 +1,4 @@
+import 'package:falcorp_project/models/dataModels.dart';
 import 'package:flutter/material.dart';
 
 import 'userDetailsSubDialog/email.dart';
@@ -5,19 +6,28 @@ import 'userDetailsSubDialog/mobileNumber.dart';
 import 'userDetailsSubDialog/password.dart';
 import 'userDetailsSubDialog/username.dart';
 
-class UserDetails extends StatefulWidget {
-  const UserDetails({super.key});
+class UserDetailsPage extends StatefulWidget {
+  const UserDetailsPage({super.key, required this.userData});
 
+  final UserData userData;
   @override
-  State<UserDetails> createState() => _UserDetailsState();
+  State<UserDetailsPage> createState() => _UserDetailsPageState();
 }
 
-class _UserDetailsState extends State<UserDetails> {
+class _UserDetailsPageState extends State<UserDetailsPage> {
 
-  var username = 'MoDaMan';
-  var email = 'MoFal@email.com';
-  var mobileNumber = '+267 71 234 567';
+  var username = '';
+  var email = '';
+  var mobileNumber = '';
   var password = '••••••••';
+
+  @override
+  void initState() {
+    username = widget.userData.username;
+    email = widget.userData.email;
+    mobileNumber = widget.userData.phoneNumber;
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {

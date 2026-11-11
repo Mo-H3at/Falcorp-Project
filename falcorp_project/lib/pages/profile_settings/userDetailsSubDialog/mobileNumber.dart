@@ -57,6 +57,9 @@ class _MobileNumberDialogState extends State<MobileNumberDialog> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  currentMobileNumber = _mobileNumberController.text;
+                });
                 Navigator.of(context).pop();
               },
               child: const Text('Save'),

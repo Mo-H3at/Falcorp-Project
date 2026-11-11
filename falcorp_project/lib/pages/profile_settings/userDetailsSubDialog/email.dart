@@ -57,6 +57,9 @@ class _EmailAddressDialogState extends State<EmailAddressDialog> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  currentEmail = _emailController.text;
+                });
                 Navigator.of(context).pop();
               },
               child: const Text('Save'),

@@ -57,6 +57,9 @@ late var currentGender = widget.currentGender;
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  currentGender = _genderController.text;
+                });
                 Navigator.of(context).pop();
               },
               child: const Text('Save'),

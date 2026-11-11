@@ -55,6 +55,9 @@ class _DateOfBirthDialogState extends State<DateOfBirthDialog> {
             const SizedBox(height: 20),
             ElevatedButton(
               onPressed: () {
+                setState(() {
+                  currentDateOfBirth = _dateOfBirthController.text;
+                });
                 Navigator.of(context).pop();
               },
               child: const Text('Save'),
