@@ -7,7 +7,6 @@ class MainCardWidget extends StatefulWidget {
   const MainCardWidget({super.key,required this.card,});
 
   final CardData card;
-  
 
   @override
   State<MainCardWidget> createState() => _MainCardWidgetState();
@@ -17,8 +16,6 @@ class _MainCardWidgetState extends State<MainCardWidget> {
 
   @override
   Widget build(BuildContext context) {
-
-
     return InkWell(
       child: Card(
         child: Center(

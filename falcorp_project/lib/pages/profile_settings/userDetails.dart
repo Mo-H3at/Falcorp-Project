@@ -23,7 +23,8 @@ class _UserDetailsState extends State<UserDetails> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.grey,
+        backgroundColor: const Color.fromARGB(255, 0, 0, 0),
+        foregroundColor: const Color.fromARGB(255, 255, 255, 255),
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {

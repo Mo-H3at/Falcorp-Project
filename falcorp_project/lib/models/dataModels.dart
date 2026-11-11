@@ -1,5 +1,3 @@
-import 'package:flutter/widgets.dart';
-
 class CardData {
   final int id;
   final String image1;

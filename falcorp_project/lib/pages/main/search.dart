@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../models/dataClasses.dart';
+import '../../models/dataModels.dart';
 import '../../shared_widgets/mainPageCards.dart';
 
 class Search extends StatefulWidget {
@@ -13,6 +14,43 @@ class Search extends StatefulWidget {
 class _SearchState extends State<Search> {
 
   var carData = MainCardData();
+  late List<CardData> searchItems;
+  late List<CardData> searchResults;
+  late final TextEditingController _searchedNameController ;
+  late final FocusNode _searchedNameFocusNode;
+  
+  @override
+  void initState() {
+    searchItems = [
+      carData.rx7,
+      carData.r8,
+      carData.e35,
+      carData.fType,
+      carData.porsche911,
+      carData.r33,
+      carData.regera,
+      carData.r34,
+      carData.porsche911,
+      carData.silvia,
+      carData.miata,
+      carData.charger,
+      carData.i8,
+      carData.vulcan,
+      carData.aventador,
+    ];
+    _searchedNameController = TextEditingController();
+    _searchedNameFocusNode= FocusNode();
+    searchResults = searchItems;
+    super.initState();
+  }
+
+  @override
+  void dispose(){ 
+    _searchedNameController.dispose();
+    _searchedNameFocusNode.dispose();
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
      return Scaffold(
@@ -25,6 +63,8 @@ class _SearchState extends State<Search> {
               child: Padding(
                 padding: const EdgeInsets.symmetric(vertical: 8.0),
                 child: TextField(
+                  controller: _searchedNameController,
+                  focusNode: _searchedNameFocusNode,
                   decoration: InputDecoration(
                     hintText: 'Search...',
                     enabled: true,
@@ -33,25 +73,22 @@ class _SearchState extends State<Search> {
                       borderRadius: BorderRadius.circular(8.0),
                     ),
                   ),
+                  onChanged: (value) {
+                    setState(() {
+                      searchResults = searchItems.where((name) => name.carName.toLowerCase().contains(value.toLowerCase())).toList();
+                    });
+                  },
                 ),
               ),
             ),
-            Expanded(
+             Expanded(
               flex: 1, 
-              child: GridView.count(
-                mainAxisSpacing: 10,
-                crossAxisSpacing: 10,
-                padding: const EdgeInsets.all(10),
-                crossAxisCount: 2,
-                  children: [
-                    MainCardWidget(card: carData.rx7),
-                    MainCardWidget(card: carData.r8),
-                    MainCardWidget(card: carData.e35),
-                    MainCardWidget(card: carData.fType),
-                    MainCardWidget(card: carData.porsche911),
-                    MainCardWidget(card: carData.r33),
-                ],
-              ),
+              child: GridView.builder(
+                gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), 
+                itemCount: searchResults.length,
+                itemBuilder: (BuildContext context, int index){
+                  return MainCardWidget(card: searchResults[index]);
+                })
             ),
           ],
         ),
