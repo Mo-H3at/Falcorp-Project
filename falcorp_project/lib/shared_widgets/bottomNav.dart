@@ -35,7 +35,7 @@ static const List<Widget> _widgetOptions = <Widget>[
       appBar: AppBar(
         backgroundColor: Colors.black,
         foregroundColor: Colors.white,
-        title: const Text('Mo Tech'),
+        title: const Text('MotorHub'),
         actions: [
           IconButton(
             icon: const Icon(Icons.notifications),

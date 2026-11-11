@@ -19,12 +19,16 @@ class _SearchState extends State<Search> {
           children: [
             Expanded(
               flex: 0,
-              child: TextField(
-                decoration: InputDecoration(
-                  hintText: 'Search...',
-                  prefixIcon: Icon(Icons.search),
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(8.0),
+              child: Padding(
+                padding: const EdgeInsets.symmetric(vertical: 8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    hintText: 'Search...',
+                    enabled: false,
+                    prefixIcon: Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(8.0),
+                    ),
                   ),
                 ),
               ),
@@ -42,7 +46,7 @@ class _SearchState extends State<Search> {
                     MainCardWidget(imagePath: 'Beemer1.jpg'),
                     MainCardWidget(imagePath: 'Jaguar1.jpg'),
                     MainCardWidget(imagePath: 'Porsche1.jpg'),
-                    MainCardWidget(imagePath: 'R33_1.jpg'),
+                    MainCardWidget(imagePath: 'Nissan1.jpg'),
                     MainCardWidget(imagePath: 'AstonMartin1.jpg'),
                     MainCardWidget(imagePath: 'BMW1.jpg'),
                 ],

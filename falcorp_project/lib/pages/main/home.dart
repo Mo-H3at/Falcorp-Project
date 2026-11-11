@@ -29,7 +29,7 @@ class _HomePageState extends State<HomePage> {
             MainCardWidget(imagePath: 'Beemer1.jpg'),
             MainCardWidget(imagePath: 'Jaguar1.jpg'),
             MainCardWidget(imagePath: 'Porsche1.jpg'),
-            MainCardWidget(imagePath: 'R33_1.jpg'),
+            MainCardWidget(imagePath: 'Nissan1.jpg'),
             MainCardWidget(imagePath: 'AstonMartin1.jpg'),
             MainCardWidget(imagePath: 'BMW1.jpg'),
           ],
